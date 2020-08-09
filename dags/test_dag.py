@@ -15,7 +15,7 @@ with DAG(DAG_NAME, schedule_interval="*/10 * * * *", default_args=default_args) 
     run_this_2.set_upstream(run_this_1)
     run_this_3 = BashOperator(
         task_id="run_this_3",
-        bash_command="echo success",
+        bash_command="echo imairflow123",
         executor_config={"service_account_name": "airflow-pod-account"},
     )
     run_this_3.set_upstream(run_this_2)
