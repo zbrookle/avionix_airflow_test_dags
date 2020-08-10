@@ -3,7 +3,7 @@ from airflow.operators.dummy_operator import DummyOperator
 from datetime import datetime
 from airflow.operators.bash_operator import BashOperator
 
-DAG_NAME = "test"
+DAG_NAME = "my_test"
 default_args = {
     "owner": "airflow",
     "depends_on_past": True,
