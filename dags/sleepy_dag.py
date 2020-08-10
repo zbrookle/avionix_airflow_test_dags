@@ -2,6 +2,7 @@ from airflow.models.dag import DAG
 from datetime import datetime
 from airflow.operators.python_operator import PythonOperator
 from time import sleep
+from logging import info
 
 DAG_NAME = "sleepy_test"
 default_args = {
@@ -13,8 +14,8 @@ default_args = {
 
 def sleepy_func():
     for i in range(5):
-        print("I'm sleepy...")
-        print("zzzzzz...")
+        info("I'm sleepy...")
+        info("zzzzzz...")
         sleep(2)
 
 
