@@ -15,7 +15,7 @@ def sleepy_func():
     for i in range(5):
         print("I'm sleepy...")
         print("zzzzzz...")
-        sleep(1)
+        sleep(2)
 
 
 with DAG(DAG_NAME, schedule_interval="*/10 * * * *", default_args=default_args) as dag:
