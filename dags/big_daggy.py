@@ -13,9 +13,8 @@ with DAG(DAG_NAME, schedule_interval="*/10 * * * *", default_args=default_args) 
         bash_command="echo success",
         executor_config={
             "KubernetesExecutor": {
-                "request_cpu": "1",
-                "request_memory": "128Mi",
-                "limit_memory": "128Mi",
+                "requests": {"cpu": "1", "memory": "128Mi"},
+                "limits": {"cpu": "1", "memory": "128Mi"},
             }
         },
     )
