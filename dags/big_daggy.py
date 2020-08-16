@@ -5,6 +5,7 @@ from airflow.operators.bash_operator import BashOperator
 DAG_NAME = "big_daggy"
 default_args = {
     "owner": "airflow",
+    "depends_on_past": True,
     "start_date": datetime(2020, 1, 1),
 }
 with DAG(DAG_NAME, schedule_interval="*/10 * * * *", default_args=default_args) as dag:
@@ -14,9 +15,8 @@ with DAG(DAG_NAME, schedule_interval="*/10 * * * *", default_args=default_args) 
         executor_config={
             "KubernetesExecutor": {
                 "resources": {
-                    "request_cpu": "1",
-                    "request_memory": "128Mi",
-                    "limit_memory": "128Mi",
+                    "request_cpu": "0.5",
+                    "request_memory": "200Mi"
                 }
             }
         },
