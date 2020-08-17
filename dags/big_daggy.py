@@ -2,7 +2,7 @@ from airflow.models.dag import DAG
 from datetime import datetime
 from airflow.operators.bash_operator import BashOperator
 
-DAG_NAME = "big_daggy"
+DAG_NAME = "big_dag"
 default_args = {
     "owner": "airflow",
     "start_date": datetime(2020, 1, 1),
